@@ -1,8 +1,20 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.google.dagger.hilt.android)
 }
+
+val properties = Properties().apply {
+    rootProject.file("local.properties").reader().use(::load)
+}
+
+val propOpenExchangeRatesBaseUrl = properties["openExchangeRates.baseUrl"] as String
+val propOpenExchangeRatesApikey = properties["openExchangeRates.apikey"] as String
 
 android {
     namespace = "emperorfin.android.multicurrencyconverter"
@@ -16,6 +28,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "OPEN_EXCHANGE_RATES_BASE_URL", propOpenExchangeRatesBaseUrl)
+        buildConfigField("String", "OPEN_EXCHANGE_RATES_API_KEY", propOpenExchangeRatesApikey)
     }
 
     buildTypes {
@@ -36,6 +51,8 @@ android {
     }
     buildFeatures {
         compose = true
+
+        buildConfig = true
     }
 }
 
@@ -56,4 +73,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.google.gson)
+    implementation(libs.google.dagger.hilt.android)
+    kapt(libs.google.dagger.hilt.compiler)
+    implementation(libs.google.accompanist.insets)
+    implementation(libs.github.skydoves.sandwich)
+    implementation(libs.github.skydoves.landscapist.coil)
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.retrofit.converter.moshi)
+    implementation(libs.squareup.retrofit.converter.gson)
+
+    testImplementation(libs.jetbrains.kotlinx.coroutines.test)
 }

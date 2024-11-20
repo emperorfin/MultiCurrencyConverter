@@ -10,6 +10,17 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
+jetbrainsKotlinxCoroutinesTest = "1.5.2"
+androidxNavigation = "2.5.3"
+androidxRoom = "2.6.1"
+androidxHiltNavigationCompose = "1.0.0"
+androidxConstraintlayoutCompose = "1.0.0-beta02"
+googleGson = "2.8.9"
+googleDaggerHiltAndroid = "2.51.1"
+googleAccompanist = "0.20.0"
+squareupRetrofit = '2.9.0'
+skydovesSandwich = "1.2.1"
+skydovesLandscapistCoil = "1.4.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,9 +37,32 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoom" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "androidxRoom" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidxRoom" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "androidxConstraintlayoutCompose" }
+
+jetbrains-kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "jetbrainsKotlinxCoroutinesTest" }
+
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "googleGson" }
+google-dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "googleDaggerHiltAndroid" }
+google-dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "googleDaggerHiltAndroid" }
+google-accompanist-insets = { group = "com.google.accompanist", name = "accompanist-insets", version.ref = "googleAccompanist" }
+
+github-skydoves-sandwich = { group = "com.github.skydoves", name = "sandwich", version.ref = "skydovesSandwich" }
+# Compose image loader
+github-skydoves-landscapist-coil = { group = "com.github.skydoves", name = "landscapist-coil", version.ref = "skydovesLandscapistCoil" }
+
+squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "squareupRetrofit" }
+squareup-retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "squareupRetrofit" }
+squareup-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "squareupRetrofit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-kapt = { id = "kotlin-kapt" }
+google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "googleDaggerHiltAndroid" }
 
