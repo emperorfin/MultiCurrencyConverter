@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">Multi Currency Converter</string>
+
+    <string name="exception_occurred_remote">Remote exception occurred.</string>
+    <string name="exception_occurred_local">Local exception occurred.</string>
+
+    <string name="error_deleting_currency_rates">Error deleting currency rates.</string>
+    <string name="error_cant_save_empty_currency_rate_list">An empty list of currency rates cannot be saved.</string>
+    <string name="error_all_currency_rates_not_saved">All the currency rate were not saved.</string>
+
+    <string name="error_memory_currency_rate_list_not_available">Currency rate list not available memory error.</string>
+    <string name="error_local_currency_rate_list_not_available">Currency rate list not available local error.</string>
+    <string name="error_remote_currency_rate_list_not_available">Currency rate list not available remote error.</string>
+    <string name="error_memory_currency_rate">Currency rate memory error.</string>
+    <string name="error_local_currency_rate">Currency rate local error.</string>
+    <string name="error_remote_currency_rate">Currency rate remote error.</string>
+    <string name="error_memory_get_currency_rate">Get currency rate memory error.</string>
+    <string name="error_local_get_currency_rate">Get currency rate local error.</string>
+    <string name="error_remote_get_currency_rate">Get currency rate remote error.</string>
+    <string name="error_memory_insert_currency_rate">Insert currency rate memory error.</string>
+    <string name="error_local_insert_currency_rate">Insert currency rate local error.</string>
+    <string name="error_remote_insert_currency_rate">Insert currency rate remote error.</string>
+    <string name="error_memory_update_currency_rate">Update currency rate memory error.</string>
+    <string name="error_local_update_currency_rate">Update currency rate local error.</string>
+    <string name="error_remote_update_currency_rate">Update currency rate remote error.</string>
+    <string name="error_memory_delete_currency_rate">Delete currency rate memory error.</string>
+    <string name="error_local_delete_currency_rate">Delete currency rate local error.</string>
+    <string name="error_remote_delete_currency_rate">Delete currency rate remote error.</string>
+    <string name="error_memory_non_existent_currency_rate_data">Non existent currency rate data memory error.</string>
+    <string name="error_local_non_existent_currency_rate_data">Non existent currency rate data local error.</string>
+    <string name="error_remote_non_existent_currency_rate_data">Non existent currency rate data remote error.</string>
+    <string name="error_repository_get_currency_rate">Get currency rate repository error.</string>
+    <string name="error_repository_insert_currency_rate">Insert currency rate repository error.</string>
+    <string name="error_repository_delete_currency_rate">Delete currency rate repository error.</string>
+    <string name="error_cant_force_refresh_currency_rates_remote_data_source_unavailable">Can\'t force currency rates refresh. Remote data source is unavailable.</string>
+    <string name="error_repository_currency_rate_list_not_available">User list not available repository error.</string>
+    <string name="error_fetching_from_remote_and_local">Error fetching from remote and local.</string>
 </resources>
