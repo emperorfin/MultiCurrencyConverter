@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "emperorfin.android.multicurrencyconverter"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -80,6 +80,7 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.datastore.preferences)
     implementation(libs.google.gson)
     implementation(libs.google.dagger.hilt.android)
     kapt(libs.google.dagger.hilt.compiler)

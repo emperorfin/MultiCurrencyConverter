@@ -9,12 +9,14 @@ espressoCore = "3.6.1"
 #lifecycleRuntimeKtx = "2.8.7" // TODO: Use this version
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
-composeBom = "2024.04.01"
+#composeBom = "2024.04.01"
+composeBom = "2024.09.03"
 jetbrainsKotlinxCoroutinesTest = "1.5.2"
 androidxNavigation = "2.5.3"
 androidxRoom = "2.6.1"
 androidxHiltNavigationCompose = "1.0.0"
 androidxConstraintlayoutCompose = "1.0.0-beta02"
+androidxDatastorePreferences = "1.0.0"
 googleGson = "2.8.9"
 googleDaggerHiltAndroid = "2.51.1"
 googleAccompanist = "0.20.0"
@@ -43,6 +45,7 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidxRoom" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "androidxConstraintlayoutCompose" }
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidxDatastorePreferences" }
 
 jetbrains-kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "jetbrainsKotlinxCoroutinesTest" }
 

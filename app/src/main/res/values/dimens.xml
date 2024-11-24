@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="header_height">192dp</dimen>
+    <dimen name="header_padding">16dp</dimen>
+    <dimen name="header_image_width">100dp</dimen>
+
+    <dimen name="app_name_text_font_size">32dp</dimen>
+    <dimen name="app_name_spacer_height">20dp</dimen>
+
+    <dimen name="empty_content_image_size">46dp</dimen>
+
+    <dimen name="loading_indicator_circular_progress_indicator_width">64dp</dimen>
+
+    <dimen name="currency_converter_screen_content_app_name_padding_vertical">0dp</dimen>
+    <dimen name="currency_converter_screen_content_app_name_padding_horizontal">24dp</dimen>
+    <dimen name="currency_converter_screen_content_spacer_width_var1">5dp</dimen>
+    <dimen name="currency_converter_screen_content_spacer_height_var1">8dp</dimen>
+    <dimen name="currency_converter_screen_content_spacer_height_var2">16dp</dimen>
+    <dimen name="currency_converter_screen_content_button_height">67dp</dimen>
+    <dimen name="currency_converter_screen_content_button_shape">6dp</dimen>
+    <dimen name="currency_converter_screen_content_button_padding_bottom">10dp</dimen>
+    <dimen name="currency_converter_screen_content_text_font_size">16dp</dimen>
+    <dimen name="currency_converter_screen_content_lazy_vertical_grid_padding_start">12dp</dimen>
+    <dimen name="currency_converter_screen_content_lazy_vertical_grid_padding_end">12dp</dimen>
+    <dimen name="currency_converter_screen_content_lazy_vertical_grid_padding_bottom">16dp</dimen>
+    <dimen name="currency_converter_screen_content_lazy_vertical_grid_padding_top">16dp</dimen>
+    <dimen name="currency_converter_screen_content_lazy_vertical_grid_min_size">328dp</dimen>
+    <dimen name="currency_converter_screen_content_inner_padding">8dp</dimen>
+
+    <dimen name="currency_picker_outlined_text_field_border_width">0.5dp</dimen>
+    <dimen name="currency_picker_outlined_text_field_shape_size">6dp</dimen>
+    <dimen name="currency_picker_outlined_text_field_width">150dp</dimen>
+    <dimen name="currency_picker_icon_size">20dp</dimen>
+    <dimen name="currency_picker_drop_down_menu_height">250dp</dimen>
+    <dimen name="currency_picker_text_font_size">14dp</dimen>
+
+    <dimen name="currency_rate_item_card_padding">4dp</dimen>
+    <dimen name="currency_rate_item_row_padding_start">8dp</dimen>
+    <dimen name="currency_rate_item_icon_size">40dp</dimen>
+    <dimen name="currency_rate_item_text_padding">16dp</dimen>
+    <dimen name="currency_rate_item_text_font_size">30dp</dimen>
+
+    <dimen name="rate_text_field_text_field_shape_size">6dp</dimen>
+
+    <dimen name="app_drawer_column_padding_end">32dp</dimen>
+
+    <dimen name="drawer_button_spacer_width">16dp</dimen>
+</resources>

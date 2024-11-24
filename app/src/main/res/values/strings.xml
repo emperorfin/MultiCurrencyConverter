@@ -1,12 +1,36 @@
 <resources>
     <string name="app_name">Multi Currency Converter</string>
 
+    <string name="app_about">About</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="menu_more">More</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_currencies">No currencies.</string>
+    <string name="converter_text">Converter</string>
+    <string name="dot_text">.</string>
+    <string name="currency_text">Currency</string>
+    <string name="convert_text">Convert</string>
+
+    <string name="message_input_must_be_digits_only">Input must be digits only.</string>
+    <string name="message_please_select_a_valid_currency_symbol">Please select a valid currency symbol.</string>
+    <string name="message_enter_an_amount">Enter an amount</string>
+    <string name="message_refresh_in_30_minutes">Please refresh in 30 minutes after a successful refresh.</string>
+    <string name="message_no_internet_loading_cached_currency_rates">No internet connectivity. Loading saved currency rates…</string>
+    <string name="message_no_internet_connectivity">No internet connectivity.</string>
+
+    <!-- Content Descriptions -->
+    <string name="content_description_no_currencies_image">No currencies image</string>
+    <string name="content_description_flag">Flag</string>
+    <string name="content_description_show_less">Show less</string>
+    <string name="content_description_show_more">Show more</string>
+
     <string name="exception_occurred_remote">Remote exception occurred.</string>
     <string name="exception_occurred_local">Local exception occurred.</string>
 
     <string name="error_deleting_currency_rates">Error deleting currency rates.</string>
     <string name="error_cant_save_empty_currency_rate_list">An empty list of currency rates cannot be saved.</string>
     <string name="error_all_currency_rates_not_saved">All the currency rate were not saved.</string>
+    <string name="error_unexpected_during_conversion">Unexpected error during currency conversion.</string>
 
     <string name="error_memory_currency_rate_list_not_available">Currency rate list not available memory error.</string>
     <string name="error_local_currency_rate_list_not_available">Currency rate list not available local error.</string>
@@ -35,4 +59,5 @@
     <string name="error_cant_force_refresh_currency_rates_remote_data_source_unavailable">Can\'t force currency rates refresh. Remote data source is unavailable.</string>
     <string name="error_repository_currency_rate_list_not_available">User list not available repository error.</string>
     <string name="error_fetching_from_remote_and_local">Error fetching from remote and local.</string>
+
 </resources>
