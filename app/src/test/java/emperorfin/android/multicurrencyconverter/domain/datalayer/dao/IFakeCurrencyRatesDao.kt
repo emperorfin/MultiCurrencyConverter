@@ -1,0 +1,3 @@
+package emperorfin.android.multicurrencyconverter.domain.datalayer.dao
+
+interface IFakeCurrencyRatesDao : ICurrencyRatesDao
