@@ -1,0 +1,5 @@
+package emperorfin.android.multicurrencyconverter.domain.datalayer.datasource
+
+
+
+internal interface FakeCurrencyRatesDataSource : CurrencyRatesDataSource
