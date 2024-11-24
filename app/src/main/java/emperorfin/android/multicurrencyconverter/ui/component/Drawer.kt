@@ -85,15 +85,15 @@ private fun AppDrawer(
             }
         )
 
-//        DrawerButton(
-//            painter = painterResource(id = R.drawable.ic_about),
-//            label = stringResource(id = R.string.app_about),
-//            isSelected = currentRoute == Destinations.ROUTE_ABOUT,
-//            action = {
-//                navigateToAbout()
-//                closeDrawer()
-//            }
-//        )
+        DrawerButton(
+            painter = painterResource(id = R.drawable.ic_about),
+            label = stringResource(id = R.string.app_about),
+            isSelected = currentRoute == Destinations.ROUTE_ABOUT,
+            action = {
+                navigateToAbout()
+                closeDrawer()
+            }
+        )
     }
 }
 

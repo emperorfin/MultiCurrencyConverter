@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import emperorfin.android.multicurrencyconverter.ui.component.AppModalDrawer
+import emperorfin.android.multicurrencyconverter.ui.screen.about.AboutScreen
 import emperorfin.android.multicurrencyconverter.ui.screen.currencyconverter.CurrencyConverterScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -53,10 +54,9 @@ fun NavGraph(
 
         composable(Destinations.ROUTE_ABOUT) {
             AppModalDrawer(drawerState, currentRoute, navActions) {
-//                AboutScreen(
-//                    context = context,
-//                    openDrawer = { coroutineScope.launch { drawerState.open() } }
-//                )
+                AboutScreen(
+                    openDrawer = { coroutineScope.launch { drawerState.open() } }
+                )
             }
         }
     }

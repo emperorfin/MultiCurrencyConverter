@@ -11,6 +11,8 @@
     <string name="currency_text">Currency</string>
     <string name="convert_text">Convert</string>
 
+    <string name="text_this_is_just_a_simple_about_screen">This is just a simple About screen.</string>
+
     <string name="message_input_must_be_digits_only">Input must be digits only.</string>
     <string name="message_please_select_a_valid_currency_symbol">Please select a valid currency symbol.</string>
     <string name="message_enter_an_amount">Enter an amount</string>
