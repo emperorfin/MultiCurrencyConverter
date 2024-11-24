@@ -3,7 +3,7 @@ package emperorfin.android.multicurrencyconverter.data.datasource.util
 import emperorfin.android.multicurrencyconverter.data.datasource.local.framework.room.entity.currencyrate.CurrencyRateEntity
 
 
-object CurrencyRateEntityDataGeneratorUtil {
+object CurrencyRateDataGeneratorUtil {
 
     const val CURRENCY_SYMBOL_BASE_USD: String = "USD"
     const val CURRENCY_SYMBOL_OTHER_AED: String = "AED"

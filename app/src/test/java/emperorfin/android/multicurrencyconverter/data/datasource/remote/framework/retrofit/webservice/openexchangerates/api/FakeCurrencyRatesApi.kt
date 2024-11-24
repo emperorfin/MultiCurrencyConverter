@@ -2,7 +2,7 @@ package emperorfin.android.multicurrencyconverter.data.datasource.remote.framewo
 
 import emperorfin.android.multicurrencyconverter.data.datasource.local.framework.room.entity.currencyrate.CurrencyRateEntity
 import emperorfin.android.multicurrencyconverter.data.datasource.remote.framework.retrofit.webservice.openexchangerates.endpoint.currencyrates.CurrencyRatesResponse
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil
 import emperorfin.android.multicurrencyconverter.domain.datalayer.dao.IFakeCurrencyRatesDao
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -31,7 +31,7 @@ internal data class FakeCurrencyRatesApi(
         val TABLE_ROW_IDS_TWO: List<Long> = listOf(1L, 2L)
 
         val CURRENCY_RATES_ENTITY: List<CurrencyRateEntity> =
-            CurrencyRateEntityDataGeneratorUtil.getCurrencyRateEntityList()
+            CurrencyRateDataGeneratorUtil.getCurrencyRateEntityList()
 
         fun getSuccessfulRemoteCurrencyRates(): Response<CurrencyRatesResponse> {
             val responseWrapper = CurrencyRatesResponse(

@@ -30,7 +30,6 @@ data class CurrencyRatesRemoteDataSourceRetrofit @Inject internal constructor(
     @RemoteCurrencyRatesDao private val currencyRatesDao: ICurrencyRatesDao,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
     @MainDispatcher private val mainDispatcher: CoroutineDispatcher,
-//    private val currencyRateDtoMapper: CurrencyRateDataTransferObjectMapper,
     private val currencyRateModelMapper: CurrencyRateModelMapper
 ) : CurrencyRatesDataSource {
     override suspend fun countAllCurrencyRates(params: Params): ResultData<Int> =

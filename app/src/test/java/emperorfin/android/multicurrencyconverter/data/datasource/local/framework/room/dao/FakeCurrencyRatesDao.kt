@@ -2,14 +2,14 @@ package emperorfin.android.multicurrencyconverter.data.datasource.local.framewor
 
 import emperorfin.android.multicurrencyconverter.data.constant.StringConstants.ERROR_MESSAGE_NOT_YET_IMPLEMENTED
 import emperorfin.android.multicurrencyconverter.data.datasource.local.framework.room.entity.currencyrate.CurrencyRateEntity
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.CURRENCY_SYMBOL_BASE_USD
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.CURRENCY_SYMBOL_OTHER_AED
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.CURRENCY_SYMBOL_OTHER_AFN
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.ID_AED
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.ID_AFN
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.RATE_AED
-import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateEntityDataGeneratorUtil.RATE_AFN
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.CURRENCY_SYMBOL_BASE_USD
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.CURRENCY_SYMBOL_OTHER_AED
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.CURRENCY_SYMBOL_OTHER_AFN
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.ID_AED
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.ID_AFN
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.RATE_AED
+import emperorfin.android.multicurrencyconverter.data.datasource.util.CurrencyRateDataGeneratorUtil.RATE_AFN
 import emperorfin.android.multicurrencyconverter.domain.datalayer.dao.IFakeCurrencyRatesDao
 
 internal data class FakeCurrencyRatesDao(
@@ -30,7 +30,7 @@ internal data class FakeCurrencyRatesDao(
         val TABLE_ROW_IDS_TWO: List<Long> = listOf(1L, 2L)
 
         val CURRENCY_RATES_ENTITY: List<CurrencyRateEntity> =
-            CurrencyRateEntityDataGeneratorUtil.getCurrencyRateEntityList()
+            CurrencyRateDataGeneratorUtil.getCurrencyRateEntityList()
     }
 
     override suspend fun countAllCurrencyRates(): Int {
