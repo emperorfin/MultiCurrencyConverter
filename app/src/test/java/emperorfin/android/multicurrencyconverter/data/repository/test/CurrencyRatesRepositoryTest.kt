@@ -68,8 +68,8 @@ class CurrencyRatesRepositoryTest {
 
     }
 
-    private lateinit var currencyRatesLocalDataSourceRoom: FakeCurrencyRatesLocalDataSourceRoom
-    private lateinit var currencyRatesRemoteDataSourceRetrofit: FakeCurrencyRatesRemoteDataSourceRetrofit
+    private lateinit var currencyRatesLocalDataSource: FakeCurrencyRatesLocalDataSourceRoom
+    private lateinit var currencyRatesRemoteDataSource: FakeCurrencyRatesRemoteDataSourceRetrofit
 
     // Class under test
     private lateinit var currencyRatesRepository: CurrencyRatesRepository
@@ -81,12 +81,12 @@ class CurrencyRatesRepositoryTest {
     @Before
     fun createRepository() {
 
-        currencyRatesLocalDataSourceRoom = FakeCurrencyRatesLocalDataSourceRoom()
-        currencyRatesRemoteDataSourceRetrofit = FakeCurrencyRatesRemoteDataSourceRetrofit()
+        currencyRatesLocalDataSource = FakeCurrencyRatesLocalDataSourceRoom()
+        currencyRatesRemoteDataSource = FakeCurrencyRatesRemoteDataSourceRetrofit()
 
         currencyRatesRepository = CurrencyRatesRepository(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom,
-            currencyRatesRemoteDataSource = currencyRatesRemoteDataSourceRetrofit,
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource,
+            currencyRatesRemoteDataSource = currencyRatesRemoteDataSource,
             ioDispatcher = Dispatchers.Unconfined
         )
     }
@@ -94,12 +94,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countAllCurrencyRates_LocalDataSourceCurrencyRatesMoreThanZero() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countAllCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_150)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val noOfCurrencyRatesExpected: Int = NUM_OF_CURRENCY_RATES_150
@@ -118,12 +118,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countAllCurrencyRates_LocalDataSourceNonExistentCurrencyRateDataError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countAllCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_0)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_NONE
@@ -143,12 +143,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countAllCurrencyRates_LocalDataSourceGeneralError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countAllCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_MINUS_1)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_NONE
@@ -165,12 +165,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countAllCurrencyRates_LocalDataSourceExceptionThrown() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isCountAllCurrencyRatesException = IS_EXCEPTION_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_NONE
@@ -215,12 +215,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countCurrencyRates_LocalDataSourceCurrencyRatesMoreThanZero() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_150)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val noOfCurrencyRatesExpected: Int = NUM_OF_CURRENCY_RATES_150
@@ -239,12 +239,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countCurrencyRates_LocalDataSourceNonExistentCurrencyRateDataError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_0)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -264,12 +264,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countCurrencyRates_LocalDataSourceGeneralError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             countCurrencyRatesResultData = ResultData.Success(NUM_OF_CURRENCY_RATES_MINUS_1)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -286,12 +286,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun countCurrencyRates_LocalDataSourceExceptionThrown() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isCountCurrencyRatesException = IS_EXCEPTION_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -367,12 +367,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun getCurrencyRates_LocalDataSourceCurrencyRateListNotAvailableLocalError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             getCurrencyRatesResultData = ResultData.Success(emptyList())
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val errorMessageExpected: Int = R.string.error_fetching_from_remote_and_local
@@ -398,12 +398,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun getCurrencyRates_LocalDataSourceExceptionThrown() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isGetCurrencyRatesException = IS_EXCEPTION_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val errorMessageExpected: Int = R.string.exception_occurred_local
@@ -458,12 +458,12 @@ class CurrencyRatesRepositoryTest {
     fun saveCurrencyRates_LocalDataSourceCurrencyRatesListNotEmpty() = runTest {
         val tableRowIdsExpected: List<Long> = listOf(1L, 2L)
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             saveCurrencyRatesResultData = ResultData.Success(tableRowIdsExpected)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val currencyRateModel1 = CurrencyRateModel.newInstance(
@@ -515,12 +515,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun saveCurrencyRates_LocalDataSourceAllCurrencyRatesNotSavedError() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isSaveCurrencyRatesError = IS_SAVE_CURRENCY_RATES_ERROR_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val errorMessageExpected: Int = R.string.error_all_currency_rates_not_saved
@@ -559,12 +559,12 @@ class CurrencyRatesRepositoryTest {
     fun deleteCurrencyRates_LocalDataSourceCurrencyRatesDeletedSuccessfully() = runTest {
         val numOfCurrencyRatesDeletedExpected: Int = NUM_OF_CURRENCY_RATES_150
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             deleteCurrencyRatesResultData = ResultData.Success(numOfCurrencyRatesDeletedExpected)
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -584,12 +584,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun deleteCurrencyRates_LocalDataSourceErrorDeletingCurrencyRates() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isDeleteCurrencyRatesErrorWhileDeletingAllRates = IS_DELETE_CURRENCY_RATES_ERROR_WHILE_DELETING_ALL_RATE_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -612,12 +612,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun deleteCurrencyRates_LocalDataSourceExceptionThrownWhileCountingCurrencyRates() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isDeleteCurrencyRatesErrorDuringRatesCount = IS_DELETE_CURRENCY_RATES_ERROR_DURING_RATES_COUNT_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -634,12 +634,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun deleteCurrencyRates_LocalDataSourceExceptionThrown() = runTest {
 
-        currencyRatesLocalDataSourceRoom = currencyRatesLocalDataSourceRoom.copy(
+        currencyRatesLocalDataSource = currencyRatesLocalDataSource.copy(
             isDeleteCurrencyRatesException = IS_EXCEPTION_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesLocalDataSource = currencyRatesLocalDataSourceRoom
+            currencyRatesLocalDataSource = currencyRatesLocalDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -714,12 +714,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun getCurrencyRates_RemoteDataSourceGetCurrencyRatesRemoteError() = runTest {
 
-        currencyRatesRemoteDataSourceRetrofit = currencyRatesRemoteDataSourceRetrofit.copy(
+        currencyRatesRemoteDataSource = currencyRatesRemoteDataSource.copy(
             isGetCurrencyRatesResponseUnsuccessful = IS_GET_CURRENCY_RATES_RESPONSE_UNSUCCESSFUL_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesRemoteDataSource = currencyRatesRemoteDataSourceRetrofit
+            currencyRatesRemoteDataSource = currencyRatesRemoteDataSource
         )
 
         val params = PARAMS_CURRENCY_CONVERTER
@@ -736,12 +736,12 @@ class CurrencyRatesRepositoryTest {
     @Test
     fun getCurrencyRates_RemoteDataSourceExceptionThrown() = runTest {
 
-        currencyRatesRemoteDataSourceRetrofit = currencyRatesRemoteDataSourceRetrofit.copy(
+        currencyRatesRemoteDataSource = currencyRatesRemoteDataSource.copy(
             isGetCurrencyRatesException = IS_EXCEPTION_TRUE
         )
 
         currencyRatesRepository = currencyRatesRepository.copy(
-            currencyRatesRemoteDataSource = currencyRatesRemoteDataSourceRetrofit
+            currencyRatesRemoteDataSource = currencyRatesRemoteDataSource
         )
 
         val errorMessageExpected: Int = R.string.exception_occurred_remote

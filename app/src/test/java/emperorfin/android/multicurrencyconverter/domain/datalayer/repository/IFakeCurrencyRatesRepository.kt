@@ -1,0 +1,5 @@
+package emperorfin.android.multicurrencyconverter.domain.datalayer.repository
+
+
+
+internal interface IFakeCurrencyRatesRepository : ICurrencyRatesRepository
